@@ -18,6 +18,13 @@ body {
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+        "ac ac div multiply"
+        "seven eight nine minus"
+        "four five six plus"
+        "one two three equals"
+        "zero zero decimal equals";
     gap: 5px;
     padding: 10px;
 }
@@ -32,6 +39,7 @@ body {
     font-size: 24px;
     width: 250px;
     text-align: right;
+    min-height: 6rem;
 }
 
 .prev-operand {
@@ -71,4 +79,72 @@ button:active {
 
 button.operator:active {
     background-color: #e6b800;
+}
+
+.clear {
+    grid-area: ac;
+}
+
+.operator:nth-child(2) { 
+    grid-area: div; 
+}
+
+.operator:nth-child(3) { 
+    grid-area: multiply; 
+}
+
+.operator:nth-child(4) { 
+    grid-area: minus; 
+}
+
+.number:nth-child(5) { 
+    grid-area: seven; 
+}
+
+.number:nth-child(6) { 
+    grid-area: eight; 
+}
+
+.number:nth-child(7) { 
+    grid-area: nine; 
+}
+
+.operator:nth-child(8) { 
+    grid-area: plus; 
+}
+
+.number:nth-child(9) { 
+    grid-area: four; 
+}
+
+.number:nth-child(10) { 
+    grid-area: five; 
+}
+
+.number:nth-child(11) { 
+    grid-area: six; 
+}
+
+.number:nth-child(12) { 
+    grid-area: one; 
+}
+
+.number:nth-child(13) { 
+    grid-area: two; 
+}
+
+.number:nth-child(14) { 
+    grid-area: three; 
+}
+
+.number:nth-child(15) { 
+    grid-area: zero; 
+}
+
+.decimal {
+    grid-area: decimal;
+}
+
+.equals {
+    grid-area: equals;
 }
