@@ -89,6 +89,7 @@ const numberButtons = document.querySelectorAll('.number');
 const operatorButtons = document.querySelectorAll('.operator');
 const equalsButton = document.querySelector('.equals');
 const clearButton = document.querySelector('.clear');
+const decimalButton = document.querySelector('.decimal')
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -117,3 +118,30 @@ equalsButton.addEventListener('click', () => {
         calculator.updateDisplay();
     });
 
+decimalButton.addEventListener('click', () => {
+    calculator.appendNumber('.');
+    calculator.updateDisplay();
+})
+
+
+function handleKeyPress(e) {
+    let key = e.key;
+    if (key === '*') key = 'x';
+    else if (key === '/') key = '÷'
+
+    if ((e.key >= 0 && e.key <=9) || e.key === '.') {
+        calculator.appendNumber(e.key);
+    }
+    else if (['+', '-', 'x', '÷'].includes(e.key)) {
+        calculator.chooseOperator(e.key);
+    }
+    else if (e.key === 'Enter') {
+        calculator.operate();
+    }
+    else if (e.key === 'Escape' || e.key.toLowerCase() === 'c') {
+        calculator.clear();
+    }
+    calculator.updateDisplay();
+}
+
+document.addEventListener('keydown', handleKeyPress);
