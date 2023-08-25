@@ -1,20 +1,27 @@
+// Calculator object holds operations and states
 const calculator = {
-    currentOperand: '',
-    prevOperand: '',
-    operator: undefined,
+    currentOperand: '',     // Current input or result
+    prevOperand: '',        // Number or result before an operator is pressed
+    operator: undefined,    // Operation to perform
 
+    // Method to add two numbers
     add: function(a, b) {
         return a + b;
     },
 
+
+    // Method to subtract two numbers
     subtract: function(a, b) {
         return a - b;
     },
 
+
+    //Method to multiply two numbers
     multiply: function(a, b) {
         return a * b;
     },
 
+    // Method to divide two numbers
     divide: function(a, b) {
         if (b === 0) {
             return "Nice try!";
@@ -22,6 +29,7 @@ const calculator = {
         return a / b;
     },
 
+    // Perform arithmetic operation based on operator
     operate: function() {
         let result;
         const prev = parseFloat(this.prevOperand);
@@ -49,11 +57,13 @@ const calculator = {
         this.operator = undefined
     },
 
+    // Append a number to the current operand
     appendNumber: function(number) {
         if (number === '.' && this.currentOperand.includes('.')) return;
         this.currentOperand = this.currentOperand.toString() + number.toString();
     },
 
+    // Set the operator to perform
     chooseOperator: function(op) {
         if (this.currentOperand === '') return;
         if (this.prevOperand !== '') {
@@ -65,6 +75,7 @@ const calculator = {
         this.updateDisplay();
     },
 
+    // Clear calculator states
     clear: function() {
         this.currentOperand = '';
         this.prevOperand = '';
@@ -87,7 +98,7 @@ const calculator = {
 }
 
 
-
+// Event listeners for buttons 
 
 const numberButtons = document.querySelectorAll('.number');
 const operatorButtons = document.querySelectorAll('.operator');
@@ -133,7 +144,7 @@ delButton.addEventListener('click', () => {
     calculator.updateDisplay();
 });
 
-
+// Handle keyboard input
 function handleKeyPress(e) {
     let key = e.key;
     if (key === '*') key = 'x';
