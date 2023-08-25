@@ -17,7 +17,7 @@ const calculator = {
 
     divide: function(a, b) {
         if (b === 0) {
-            return "No";
+            return "Nice try!";
         }
         return a / b;
     },
@@ -71,6 +71,10 @@ const calculator = {
         this.operator = undefined;
     },
 
+    delete: function() {
+        this.currentOperand = this.currentOperand.toString().slice(0, -1);
+    },
+
     updateDisplay: function() {
         const currentOperandText = document.querySelector('.current-operand');
         const prevOperandText = document.querySelector('.prev-operand');
@@ -90,6 +94,7 @@ const operatorButtons = document.querySelectorAll('.operator');
 const equalsButton = document.querySelector('.equals');
 const clearButton = document.querySelector('.clear');
 const decimalButton = document.querySelector('.decimal')
+const delButton = document.querySelector('.del')
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -121,7 +126,12 @@ equalsButton.addEventListener('click', () => {
 decimalButton.addEventListener('click', () => {
     calculator.appendNumber('.');
     calculator.updateDisplay();
-})
+});
+
+delButton.addEventListener('click', () => {
+    calculator.delete();
+    calculator.updateDisplay();
+});
 
 
 function handleKeyPress(e) {
@@ -140,6 +150,9 @@ function handleKeyPress(e) {
     }
     else if (e.key === 'Escape' || e.key.toLowerCase() === 'c') {
         calculator.clear();
+    }
+    else if (e.key === 'Backspace') {
+        calculator.delete();
     }
     calculator.updateDisplay();
 }
