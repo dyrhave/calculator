@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Orbitron', Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #2a2a2a, #1c1c1c 45%);
+    margin: 0;
+}
+
+.calculator {
+    border-radius: 10px;
+    background: darkgrey;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    width: 280px;
+    padding: 20px;
+    border: 1px solid #333;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+        "ac del div multiply"
+        "seven eight nine minus"
+        "four five six plus"
+        "one two three equals"
+        "zero zero decimal equals";
+    gap: 8px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.display {
+    display: flex;
+    grid-template-rows: 1fr 2fr;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-size: 24px;
+    width: 100%;
+    text-align: right;
+    min-height: 6rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.prev-operand, .current-operand {
+    padding: 10px 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+button {
+    position: relative;
+    overflow: hidden;
+    padding: 12px;
+    background: linear-gradient(135deg, #ff8c42 0%, #b66d36 100%);
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+
+button:hover {
+    background: linear-gradient(135deg, #b66d36 0%, #ff8c42 100%);
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+
+button.equals {
+    background: linear-gradient(135deg, #c44536 0%, #8b2e2e 100%);
+    color: #ffffff;
+}
+
+
+button.clear,
+button.del,
+button.operator {
+    background: linear-gradient(135deg, #4a4a4a 0%, #2e2e2e 100%);
+}
+
+
+button.operator:hover {
+    background: linear-gradient(135deg, #2e2e2e 0%, #4a4a4a 100%);
+}
+
+button.clear:hover {
+    background: linear-gradient(135deg, #2a2a2a 0%, #4a4a4a 100%);
+}
+
+button.equals:hover {
+    background: linear-gradient(135deg, #8b2e2e 0%, #c44536 100%);
+}
+
+button.del:hover {
+    background: linear-gradient(135deg, #57735D 0%, #6C8C7A 100%);
+}
+
+.del { grid-area: del; }
+.clear { grid-area: ac; }
+
+.number:nth-child(5) { grid-area: seven; }
+.number:nth-child(6) { grid-area: eight; }
+.number:nth-child(7) { grid-area: nine; }
+.operator:nth-child(8) { grid-area: minus; }
+
+.number:nth-child(9) { grid-area: four; }
+.number:nth-child(10) { grid-area: five; }
+.number:nth-child(11) { grid-area: six; }
+.operator:nth-child(12) { grid-area: plus; }
+
+.number:nth-child(13) { grid-area: one; }
+.number:nth-child(14) { grid-area: two; }
+.number:nth-child(15) { grid-area: three; }
+.number:nth-child(16) { grid-area: zero; }
+
+.equals { grid-area: equals; }
+.decimal { grid-area: decimal; }
+
+
