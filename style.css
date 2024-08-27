@@ -6,29 +6,17 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-<<<<<<< HEAD
     background: linear-gradient(135deg, #2a2a2a, #1c1c1c 45%);
-=======
-    background: linear-gradient(135deg, #dad26b 0%, #f5f5f5 100%);
->>>>>>> bbffe53542e63ebab2c9969ad4883f7be0fd70f6
     margin: 0;
 }
 
 .calculator {
     border-radius: 10px;
-<<<<<<< HEAD
     background: darkgrey;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
     width: 280px;
     padding: 20px;
     border: 1px solid #333;
-=======
-    background: linear-gradient(135deg, #f5f5f5 0%, #e8e5d1 100%);
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
-    width: 280px;
-    padding: 20px;
-    border: 1px solid #b0ada0;
->>>>>>> bbffe53542e63ebab2c9969ad4883f7be0fd70f6
 }
 
 .buttons {
@@ -69,40 +57,22 @@ body {
     text-overflow: ellipsis;
 }
 
-
 button {
     position: relative;
     overflow: hidden;
     padding: 12px;
-<<<<<<< HEAD
     background: linear-gradient(135deg, #ff8c42 0%, #b66d36 100%);
-=======
-    background: linear-gradient(135deg, #86a59c 0%, #6c8c7a 100%);
->>>>>>> bbffe53542e63ebab2c9969ad4883f7be0fd70f6
     font-size: 1.2em;
     border-radius: 5px;
     border: none;
     transition: transform 0.3s, box-shadow 0.3s;
-<<<<<<< HEAD
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
-    background-color: rgba(0, 0, 0, 0.5);
     color: #ffffff;
-=======
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #f5f5f5;
->>>>>>> bbffe53542e63ebab2c9969ad4883f7be0fd70f6
     cursor: pointer;
 }
 
-
-
 button:hover {
-<<<<<<< HEAD
     background: linear-gradient(135deg, #b66d36 0%, #ff8c42 100%);
-=======
-    background: linear-gradient(135deg, #6c8c7a 0%, #86a59c 100%);
->>>>>>> bbffe53542e63ebab2c9969ad4883f7be0fd70f6
     transform: scale(1.05);
 }
 
@@ -112,30 +82,18 @@ button:active {
     box-shadow: none;
 }
 
-
 button.equals {
-<<<<<<< HEAD
     background: linear-gradient(135deg, #c44536 0%, #8b2e2e 100%);
     color: #ffffff;
-=======
-    background: linear-gradient(135deg, #D18F77 0%, #B87260 100%);
->>>>>>> bbffe53542e63ebab2c9969ad4883f7be0fd70f6
 }
-
 
 button.clear,
 button.del,
 button.operator {
-<<<<<<< HEAD
     background: linear-gradient(135deg, #4a4a4a 0%, #2e2e2e 100%);
-=======
-    background: linear-gradient(135deg, #6c8c7a 0%, #86a59c 100%);
->>>>>>> bbffe53542e63ebab2c9969ad4883f7be0fd70f6
 }
 
-
 button.operator:hover {
-<<<<<<< HEAD
     background: linear-gradient(135deg, #2e2e2e 0%, #4a4a4a 100%);
 }
 
@@ -145,21 +103,10 @@ button.clear:hover {
 
 button.equals:hover {
     background: linear-gradient(135deg, #8b2e2e 0%, #c44536 100%);
-=======
-    background: linear-gradient(135deg, #57735D 0%, #6C8C7A 100%);
-}
-
-button.clear:hover {
-    background: linear-gradient(135deg, #57735D 0%, #6C8C7A 100%);
-}
-
-button.equals:hover {
-    background: linear-gradient(135deg, #B87260 0%, #D18F77 100%);
->>>>>>> bbffe53542e63ebab2c9969ad4883f7be0fd70f6
 }
 
 button.del:hover {
-    background: linear-gradient(135deg, #57735D 0%, #6C8C7A 100%);
+    background: linear-gradient(135deg, #2e2e2e 0%, #4a4a4a 100%);
 }
 
 .del { grid-area: del; }
@@ -182,5 +129,3 @@ button.del:hover {
 
 .equals { grid-area: equals; }
 .decimal { grid-area: decimal; }
-
-
